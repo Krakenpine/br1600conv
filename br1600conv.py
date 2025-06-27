@@ -169,6 +169,7 @@ for file in all_files:
 f.close()
 
 if include_completely_hidden_takes:
+    extra_tracks.sort(key=lambda track: track.name)
     for extra_track in extra_tracks:
         tracks.append(extra_track)
 
@@ -299,7 +300,7 @@ if not no_reaper:
             track_name = track.name
             uuid_track = str(uuid.uuid4()).upper()
             f.write("  <TRACK {")
-            f.write("{uuid_track}")
+            f.write(f"{uuid_track}")
             f.write("}\n")
             f.write(f"    NAME {track_name}\n")
             f.write("    PEAKCOL 16576\n")
