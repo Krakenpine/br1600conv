@@ -1,13 +1,15 @@
 # br1600conv
 Project file convertor for BR-1600CD
-V0.1
+V0.2
 
-Tool made with Python for converting raw project files from Boss BR-1600CD to wav-files and Reaper project.
+Tool for converting raw project files from Boss BR-1600CD to wav-files and Reaper project.
 VR8 files are raw audio data that can be easily converted to 16-bit 44.1 kHz mono wav-files. If you have just long takes that use multiple tracks and don't have any overdubs or partial takes, that conversion is enough. If you have takes that don't begin exactly where other takes begin or you can't immediately tell which take goes where, you have a problem. This tool tries to parse project files and recreate what BR-1600CD plays and renders when it is set to export data via USB.
 Why do this if that machine has USB-connection? Well, the connection seems to be unstable, probably due age of the machine and how USB-connections have evolved. Modern computers seem more often than not to timeout when establishing connection. This itself would not be a huge, just somewhat irritating, problem, but BR-1600CD needs to render its tracks into coherent wav-files (remember, the tracks inside the machine are comprised of separate takes and not just long file) and it takes long time and if the USB-connection fails (or when it's ended deliberately), the machine removes the rendered files.
 So, you can just use USB-backup option, get raw files from song-folder and run this tool in that folder.
 
 Currently it converts the VR8-files to wav and parses EVENTLST.BR2 enough to know where to places the files. Now it creates a project file for Reaper ( https://www.reaper.fm ), future development will allow it to render each track into long wav-file so you can use any other DAW.
+
+Currently done in Python and C++ to have just executable file.
 
 What is parsed from EVENTLST.BR2:
 
